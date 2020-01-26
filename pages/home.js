@@ -9,6 +9,7 @@ const Home = () => (
     <Head>
       <title>Home</title>
     </Head>
+    <img src='/static/dog.jpg' alt='Dog' width='200' />
     <h1>Hello World</h1>
     <Link href='/users'>
       <a>Usuários</a>

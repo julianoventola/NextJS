@@ -6,17 +6,19 @@ import ReactGA from 'react-ga';
 
 export default () => Composed =>
   class extends Component {
+    // MUST pass initial props from other components when using HOC
     static getInitialProps(ctx) {
       return loadGetInitialProps(Composed, ctx);
     }
 
+    // Using to Analytics undertand when changing page
     componentDidMount() {
-      console.log('PAGE VIEW');
-
+      // Set your Analytics key here  ID-999999-BR
       ReactGA.initialize('ID_ANALYTICS');
       ReactGA.pageview(window.location.pathname);
     }
 
+    // Repass all props
     render() {
       return <Composed {...this.props} />;
     }
