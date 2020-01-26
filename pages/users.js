@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 
+import Link from "next/link";
+
 export default function User({ users }) {
   return (
     <div>
@@ -9,6 +11,9 @@ export default function User({ users }) {
           <li key={user.id}>{user.login}</li>
         ))}
       </ul>
+      <Link href='/'>
+        <a>Voltar</a>
+      </Link>
     </div>
   );
 }
